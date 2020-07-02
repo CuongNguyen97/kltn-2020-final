@@ -1,0 +1,51 @@
+.hero-wrap{
+    height: 400px !important;
+   
+    .container{
+        height: 100%;
+        .no-gutters{
+            height: 100%;
+            .text-center{
+                .mb-0 {
+                    color: black;
+                }
+            }
+            .mb-2 {
+                >span{
+                    color: black ;
+                    >a{
+                        color: black ;
+                    }
+                }
+            }
+        }
+    }
+   
+}
+
+.hero-wrap1{   
+    .container{
+        height: 100%;
+        .no-gutters{
+            height: 100%;
+            .text-center{
+                .mr-2 {
+                    font-size: 18px;
+                }
+                    .mb-0 {
+                    font-size:  70px;
+                    color: black;
+                     }
+            }
+            .mb-2 {
+                >span{
+                    color: black ;
+                    >a{
+                        color: black ;
+                    }
+                }
+            }
+        }
+    }
+   
+}

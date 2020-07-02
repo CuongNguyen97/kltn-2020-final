@@ -1,0 +1,35 @@
+.room-wrap {
+    background-image: url ('../images/room-4.jpg'); 
+}
+
+.header-title{
+    margin-bottom: unset !important;
+    padding-bottom: unset !important;
+    height: 150px;
+    .title{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: unset;
+    }
+}
+.hero wrap {
+    background-image: url('../images/banner.jpg');
+}
+
+.ftco-footer {
+    margin-top: 150px;
+    background-color: #FFF;
+    bottom: 0;
+    .mb-4{
+        bottom: 0;
+        width: 100%;
+
+    }
+}
+
+.btn-orange {
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -1,0 +1,139 @@
+form {
+    box-sizing: border-box;
+    width: 260px;
+    margin: 100px auto 0;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+    border-radius: 3px;
+}
+
+form h1 {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.form-custom-input {
+    input {
+        margin: 30px 25px;
+        width: 350px;
+        display: block;
+        border: none;
+        padding-top: 15px;
+        border-bottom:  1px solid black ;
+        transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+        background: none; //linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, 88E9E0 4%);
+        background-size: 200px 100%;
+        color: white;
+    }
+    ::placeholder {
+        color: seashell;
+        opacity: 1;
+    }
+
+    input:focus,
+    input:valid {
+        box-shadow: none;
+        outline: none;
+    }
+
+    input:focus::-webkit-input-placeholder,
+    input:valid::-webkit-input-placeholder {
+        color: #FFFAFA ;
+        font-size: 14px;
+        transform: translateY(-20px);
+        visibility: visible !important;
+    }
+}
+
+
+
+.kep-login-facebook {
+    font-size: 10px !important;
+    margin-left: 25px;
+    height: 50px;
+    padding: unset;
+    width: 175px;
+}
+
+.google-login-btn {
+    >button {
+        height: 50px !important;
+        padding: unset;
+        width: 175px;
+    }
+}
+
+
+.Toastify__progress-bar {
+    display: none
+}
+
+.btn-group {
+    .btn-primary {
+        background: blue (253, 216, 53) !important;
+        border: unset !important;
+        border-top-right-radius: unset !important;
+        border-bottom-right-radius: unset !important;
+        width: 350px;
+        height: 50px;
+        border-radius: 5px;
+    }
+}
+
+.modal-60w {
+    max-width: none !important;
+    width: 60% !important;
+}
+
+.background-login-form {
+    background-image: url('/backgroundlg.jpg');
+}
+
+.destination-card-name {
+    font-family: 'Helvetica Neue',
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 1.1em;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.destination-card-price {
+    height: 60px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #ff3366;
+}
+
+.step {
+    text-align: center;
+    padding: 10px 0;
+    line-height: 35px;
+    width: 55px;
+    height: 55px;
+    background-color: blue;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.text-title {
+    color: #212121;
+    font-size: 24px;
+    font-family: "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-weight: 500px;
+    margin-bottom: 15px;
+}
