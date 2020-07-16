@@ -12,4 +12,12 @@ export class ProjectService extends BaseService {
             offset, size, subject
         })
     }
+    getComents = (id) => {
+        return this.get(`/comment/project/${id}`);
+    }
+    insertComnent = (projectId, content) => {
+        return this.post("/comment", {
+            projectId, content
+        });
+    }
 }

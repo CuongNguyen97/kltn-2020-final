@@ -29,6 +29,7 @@ class Contact extends Component {
 										<div id="form-message-warning" className="mb-4"></div> 
 					      		<div id="form-message-success" className="mb-4">
 					      		</div>
+								  
                                   <img style={{ width: '80%' }} src={require('./images/recep.jpg')} />
                             
 										{/* <form method="POST" id="contactForm" name="contactForm" className="contactForm">

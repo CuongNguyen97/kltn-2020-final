@@ -5,37 +5,87 @@ import _ from "lodash"
 import Axios from 'axios';
 import { Avatar, Button } from 'antd';
 import userAvatar from './images/user.png'
+import { Input } from 'antd';
 
-const dataComment = [
-    { name: "Nguyễn Văn A", comment: "chỗ này ok" },
-    { name: "Tèo Văn C", comment: "Tôi đánh giá chỗ này rất cao" },
-    { name: "Write Cuong", comment: "Chưa thấy chỗ nào tệ ntn" },
-]
+const { TextArea } = Input;
 
 class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: {}
+            data: {
+                galleries: [],
+                rooms: [],
+            },
+            active: 0,
+            comments: [],
+            comment: "",
         }
+        this.intervalID = 0;
         this.projectService = new ProjectService();
         this.id = _.get(this.props, "match.params.id")
+        window.scrollTo(0, 0);
+        // this.baseService = new BaseService();
     }
 
     componentDidMount() {
-        this.projectService.getDetailProject(0, 20, "", this.id)
-            .then(data => this.setState({
-                data: data
-            }))
+        this.intervalID = setInterval(() => {
+            this.active("next")();
+        }, 5000);
+        Promise.all([
+            this.projectService.getDetailProject(0, 20, "", this.id),
+            this.projectService.getComents(this.id),
+        ]).then(res => {
+            const [data, comments] = res;
+            this.setState({
+                data,
+                comments,
+            })
+        })
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.intervalID);
+    }
+
+    active = (action) => () => {
+        const length = this.state.data.galleries.length;
+        if (length === 0) return;
+        let { active } = this.state;
+        if (action === "next") {
+            active = active === length - 1 ? 0 : active + 1;
+        } else {
+            active = active === 0 ? length - 1 : active - 1;
+        }
+        this.setState({
+            active,
+        })
+    }
+
+    onCreateComment = () => {
+        const { comment } = this.state;
+        this.projectService.insertComnent(this.id, comment).then(() => {
+            this.projectService.getComents(this.id).then((comments) => {
+                this.setState({
+                    comments,
+                    comment: "",
+                })
+            })
+        })
+    }
+
+    onChange = ({ target: { value } }) => {
+        this.setState({
+            comment: value
+        })
     }
 
     render() {
-        const { data } = this.state
-        console.log("Product -> render -> data", data)
+        const { data, active, comments, comment } = this.state
         return (
             <div>
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                    <div style={{ width: '100%', height: 500 }} className="carousel-inner">
+                    <div style={{ width: '100%', height: 500,backgroundColor:'#0B0A0A'}} className="carousel-inner">
                         {/* <div style={{ height: "100%" }} className="carousel-item active">
                             <img style={{ height: "100%" }} className="d-block w-100"
                                 src={hinh1}
@@ -50,22 +100,22 @@ class Product extends Component {
                                 alt="Third slide" /></div> */}
                         {data.galleries && data.galleries.map((item, index) => {
 
-                            return <div style={{ height: "100%" }} className={"carousel-item " + index == 1 && "active"}>
-                                <img style={{ height: "100%" }} className="d-block w-100"
+                            return <div style={{ height: "100%", backgroundColor:'#0B0A0A'  }} className={`carousel-item ${active === index ? "active" : ""}`}>
+                                <img style={{ height: "100%", backgroundColor:'#0B0A0A'  }} className="d-block w-100"
                                     src={item.imageUrl}
                                 />
                             </div>
 
                         })}
                     </div>
-                    <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <div key="prev" className="carousel-control-prev" onClick={this.active("prev")} role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="sr-only">Previous</span>
-                    </a>
-                    <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    </div>
+                    <div key="next" className="carousel-control-next" onClick={this.active("next")} role="button" data-slide="next">
                         <span className="carousel-control-next-icon" aria-hidden="true"></span>
                         <span className="sr-only">Next</span>
-                    </a>
+                    </div>
                 </div>
                 <br />
                 <br />
@@ -75,28 +125,24 @@ class Product extends Component {
                     <div className="row" >
                         <div className="col-md-12">
                             <div className="room-wrap d-md-flex">
-                                <img style={{ width: "600px" }} src={require('./images/haison.jpg')} />
+                                <img style={{ width: "1000px" }} src={data.thumbnailUrl} />
                                 {/* <a href="#" className="img" style="background-image: url(images/room-1.jpg);"></a> */}
-                                <div className="half left-arrow d-flex align-items-center">
+                                <div className="half left-arrow d-flex align-items-left">
                                     <div className="text p-4 p-xl-5 text-center">
                                         <p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
                                         {/* <!-- <p className="mb-0"><span className="price mr-1">$120.00</span> <span className="per">per night</span></p> --> */}
                                         <h3 className="mb-3">{data.subject}</h3>
                                         <ul className="list-accomodation">
-                                            <li><span>{data.properties}</span> </li>
-                                            <li><span>Giá :</span> {data.price}</li>
-                                            <li><span>Địa chỉ: </span>{data.fullAddress} </li>
-                                            <li><span>Thiết kế: </span> 1 trệt + 1 lửng + 1 phòng ngủ + 1WC + ban công </li>
-                                            <li><span>Tiện ích: </span> Tặng nội thất cơ bản.</li>
-                                             <li><span> </span> Thanh toán linh hoạt theo tiến độ xây dựng.</li>
-                                             <li><span> </span> Thích hợp để đầu tư hay ở mua tại thời điểm này giá rẻ.</li>
-                                             <li><span> </span>   Sở hữu vĩnh viễn.</li>
-                                             <li><span> </span>   Đặc biệt: Có hầm gửi xe + thang máy.</li>
-                                             <li><span> </span>   Giá trọn gói chỉ 280 triệu/căn.</li>
-                                             <li><span> </span>   Thông tin pháp lý: ĐÃ có sổ hồng đã được phê duyệt quyết định chủ đầu tư.</li>
-                                                                         
+                                            <li style={{fontSize: 25}}><span style={{fontSize: 25}}>Giá :</span> {data.price}</li>
+                                            <li><span style={{fontSize: 20}}>Địa chỉ : </span>{data.fullAddress} </li>
+                                            <li>
+                                                <span style={{fontSize: 20}}>Thiết kế : </span> 
+                                                {data.properties}</li>
+                                            <li><span style={{fontSize: 20}}>Mô tả : </span>{data.longDescription}</li>
+
+
                                         </ul>
-                                      
+
                                     </div>
                                 </div>
                             </div>
@@ -104,42 +150,44 @@ class Product extends Component {
 
                     </div>
                 </div>
-               
+
                 <section className=" bg-light" >
-                <div className="row no-gutters header-title justify-content-center pb-5 mb-3">
-									<div className="col-md-7 heading-section text-center ">
-										<h2 className="title">Design Rooms</h2>
-									</div>
-								</div>
-                                </section>
-                                
+                    <div className="row no-gutters header-title justify-content-center pb-5 mb-3">
+                        <div className="col-md-7 heading-section text-center ">
+                            <h2 className="title">Design </h2>
+                        </div>
+                    </div>
+                </section>
+
 
                 {data.galleries && data.rooms.map(item => {
-                            return <div className="col-md-5">
-                                <img style={{ height: 250, width: "100%" }} src={item.imageUrl} />
-                            </div>
+                    return <div className="col-md-5">
+                        <img style={{ height: 650, width: "170%", paddingTop: 30,marginLeft: "42%" }} src={item.imageUrl} />
+                    </div>
 
-                        })}
+                })}
                 <br />
                 <br />
                 <div className='container comment-container' style={{ paddingTop: 15 }}>
                     <div className='row'>
-                        <div style={{ width: 85 }}>
+                        <TextArea onChange={this.onChange} value={comment} rows={4} />
+                        <div style={{ width: 90,paddingTop : 20 }}>
                             <Avatar size={64} src={userAvatar} />
                         </div>
-                        <div style={{ width: 700 }}></div>
+                        <div style={{ width: 990 }}></div>
                         <div className='col-md-2'>
-                            <Button type="primary" shape="round" onClick={() => this.onCreateComment()}>Đăng tải bình luận</Button>
+                            <Button type="primary" shape="round" onClick={this.onCreateComment}>Đăng tải bình luận</Button>
+                            <div style = {{marginRight: 0}}></div>
                         </div>
-                        {dataComment && dataComment.map(x => {
-                            return <div className='col-md-12' style={{ paddingTop: 50 }}>
+                        {Array.isArray(comments) && comments.map((x, idx) => {
+                            return <div key={idx} className='col-md-12' style={{ paddingTop: 70 }}>
                                 <div className='row'>
                                     <div style={{ width: 67 }}>
-                                        <Avatar size={64} src={userAvatar} />
+                                        <Avatar size={70} src={userAvatar} />
                                     </div>
                                     <div className='col-md-10'>
-                                        <div style={{ color: '#4183C4', fontWeight: 'bold' }}>{x.name}</div>
-                                        <div>{x.comment}</div>
+                                        <div style={{ color: '#4183C4', fontWeight: 'bold' }}>{x.user.fullName}</div>
+                                        <div>{x.content}</div>
                                     </div>
                                 </div>
                             </div>

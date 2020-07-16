@@ -55,8 +55,11 @@ function initMap() {
     >
       <Marker position={{ lat: 10.9056146, lng: 106.8482451 }} />
       <Marker position={{ lat: 10.762622, lng: 106.660172 }} />
-      <Marker position={{ lat: 11.94646, lng: 108.44193 }} />
-      <Marker position={{ lat: 10.34599, lng: 107.08426 }} />
+      <Marker position={{ lat: 12.2597701, lng: 109.1064126 }} />
+      <Marker position={{ lat: 21.0277631, lng: 105.834160 }} />
+      <Marker position={{ lat: 11.1424,    lng: 106.6291 }} />
+      <Marker position={{ lat: 16.0472484, lng: 108.1716863 }} />
+      <Marker position={{ lat: 19.8088602, lng: 105.7210139 }} />
 
     </GoogleMap>
   ));

@@ -37,7 +37,7 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 									</div>
@@ -45,7 +45,7 @@ class Rooms extends Component {
 								<div className="col-md-6">
 									<div className="room-wrap d-md-flex">
 										{/* <a href="#" className="img" style="background-image: url(images/room-2.jpg);"></a> */}
-										<img style={{ width: '50%' }} src={require('./images/room-2.jpg')} />
+										<img style={{ paddingTop: 50,width: '50%' }} src={require('./images/room-2.jpg')} />
 										<div className="half left-arrow d-flex align-items-center">
 											<div className="text p-4 p-xl-5 text-center">
 												<p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
@@ -57,7 +57,7 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 									</div>
@@ -77,7 +77,7 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 										<img style={{ width: '50%' }} src={require('./images/room-3.jpg')} />
@@ -98,7 +98,7 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 										<img style={{ width: '50%' }} src={require('./images/room-6.jpg')} />
@@ -107,7 +107,7 @@ class Rooms extends Component {
 
                                 <div className="col-md-6">
 									<div className="room-wrap d-md-flex">
-										<img style={{ width: '50%' }} src={require('./images/room-1.jpg')} />
+										<img style={{ width: '50%' }} src={require('./images/image_3.jpg')} />
 										{/* <a href="#" className="img" style="background-image: url(images/room-1.jpg);"></a> */}
 										<div className="half left-arrow d-flex align-items-center">
 											<div className="text p-4 p-xl-5 text-center">
@@ -120,7 +120,7 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 									</div>
@@ -128,7 +128,7 @@ class Rooms extends Component {
 
                                 <div className="col-md-6">
 									<div className="room-wrap d-md-flex">
-										<img style={{ width: '50%' }} src={require('./images/room-1.jpg')} />
+										<img style={{ width: '50%' }} src={require('./images/image_5.jpg')} />
 										{/* <a href="#" className="img" style="background-image: url(images/room-1.jpg);"></a> */}
 										<div className="half left-arrow d-flex align-items-center">
 											<div className="text p-4 p-xl-5 text-center">
@@ -141,7 +141,88 @@ class Rooms extends Component {
 													<li><span>View:</span> Sea View</li>
 													<li><span>Bed:</span> 1</li>
 												</ul>
-												<p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="room-wrap d-md-flex">
+										{/* <a href="#" className="img" style="background-image: url(images/room-2.jpg);"></a> */}
+										<img style={{ width: '50%' }} src={require('./images/em5.jpg')} />
+										<div className="half -arrow d-flex align-items-center">
+											<div className="text p-4 p-xl-5 text-center">
+												<p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
+												{/* <!-- <p className="mb-0"><span className="price mr-1">$120.00</span> <span className="per">per night</span></p> --> */}
+												<h3 className="mb-3"><a href="rooms.html">Standard Room</a></h3>
+												<ul className="list-accomodation">
+													<li><span>Max:</span> 3 Persons</li>
+													<li><span>Size:</span> 45 m2</li>
+													<li><span>View:</span> Sea View</li>
+													<li><span>Bed:</span> 1</li>
+												</ul>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="room-wrap d-md-flex">
+										{/* <a href="#" className="img" style="background-image: url(images/room-2.jpg);"></a> */}
+										<img style={{ width: '50%' }} src={require('./images/em6.jpg')} />
+										<div className="half left-arrow d-flex align-items-center">
+											<div className="text p-4 p-xl-5 text-center">
+												<p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
+												{/* <!-- <p className="mb-0"><span className="price mr-1">$120.00</span> <span className="per">per night</span></p> --> */}
+												<h3 className="mb-3"><a href="rooms.html">Kitchen</a></h3>
+												<ul className="list-accomodation">
+													<li><span>Max:</span> 3 Persons</li>
+													<li><span>Size:</span> 45 m2</li>
+													<li><span>View:</span> Sea View</li>
+													<li><span>Bed:</span> 1</li>
+												</ul>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
+											</div>
+										</div>
+									</div>
+								</div>
+								<div className="col-md-6">
+									<div className="room-wrap d-md-flex">
+										{/* <a href="#" className="img" style="background-image: url(images/room-2.jpg);"></a> */}
+										<img style={{ width: '50%' }} src={require('./images/em7.jpg')} />
+										<div className="half left-arrow d-flex align-items-center">
+											<div className="text p-4 p-xl-5 text-center">
+												<p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
+												{/* <!-- <p className="mb-0"><span className="price mr-1">$120.00</span> <span className="per">per night</span></p> --> */}
+												<h3 className="mb-3"><a href="rooms.html">Living Room</a></h3>
+												<ul className="list-accomodation">
+													<li><span>Max:</span> 3 Persons</li>
+													<li><span>Size:</span> 45 m2</li>
+													<li><span>View:</span> Sea View</li>
+													<li><span>Bed:</span> 1</li>
+												</ul>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div className="col-md-6">
+									<div className="room-wrap d-md-flex">
+										{/* <a href="#" className="img" style="background-image: url(images/room-2.jpg);"></a> */}
+										<img style={{ width: '50%' }} src={require('./images/em8.jpg')} />
+										<div className="half left-arrow d-flex align-items-center">
+											<div className="text p-4 p-xl-5 text-center">
+												<p className="star mb-0"><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span><span className="fa fa-star"></span></p>
+												{/* <!-- <p className="mb-0"><span className="price mr-1">$120.00</span> <span className="per">per night</span></p> --> */}
+												<h3 className="mb-3"><a href="rooms.html">Bed Room</a></h3>
+												<ul className="list-accomodation">
+													<li><span>Max:</span> 3 Persons</li>
+													<li><span>Size:</span> 45 m2</li>
+													<li><span>View:</span> Sea View</li>
+													<li><span>Bed:</span> 1</li>
+												</ul>
+												{/* <p className="pt-1"><a href="room-single.html" className="btn-custom px-3 py-2">View Room Details <span className="icon-long-arrow-right"></span></a></p> */}
 											</div>
 										</div>
 									</div>
@@ -159,4 +240,3 @@ class Rooms extends Component {
 }
 
 export default Rooms;
-////dsfsdfsdfdsf

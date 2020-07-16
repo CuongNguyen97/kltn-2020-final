@@ -13,6 +13,7 @@ import Contact from "./component/Contact/Contact";
 import Product from "./component/Product/Product";
 import Footer from "./component/Footer";
 import Favorite from "./component/Favorite/Favorite";
+import User from "./component/User/User";
 function App() {
 	useEffect(() => {
     if (!localStorage.getItem("token") && window.location.pathname !== "/login") {
@@ -101,11 +102,17 @@ function App() {
 						<Route path="/favorite">
 							<Favorite />
 						</Route>
+						<Route path="/user">
+							<User />
+						</Route>
 						<Route exact path="/Product/:id" render={(props) => <Product  {...props} />}></Route>
 						{/* <Route path="/Product/{id}">
 							<Product />
 						</Route> */}
 						{/* <Redirect from="/Blog" to="/Product" /> */}
+						{/* <Route path="/user">
+							<User />
+						</Route> */}
 					</Switch>
 				</div>
 			</Router>
