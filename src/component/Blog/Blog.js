@@ -82,7 +82,7 @@ export default class Blog extends Component {
                 {/* <div className ="fa fa-search" style = {{fontSize: 30}}></div>     */}
                 <input  type="hidden" value="1" enterButton= "Search" />
                 <input type="text"  value={subject} onChange={this.onChangeText} class="searchinput form-control" name="k" placeholder="Nhập dự án cần tìm" id="txtkey"  autocomplete="off"  />
-                <div className="input-group<-append">
+                <div className="input-group<-append" style={{textAlign: "center"}}>
                     <button onClick={this.getData} className="btn btn-orange" type="submit">Tìm Kiếm</button>
                 </div>
                 <section className="ftco-section bg-light">

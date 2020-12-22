@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { BackTop } from "antd";
 import PickerButton from 'antd/lib/date-picker/PickerButton'
 
 export default class Footer extends Component {
@@ -75,10 +76,15 @@ export default class Footer extends Component {
 
                             <p>
                                 Copyright &copy;
-            <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with
                             </p>
                         </div>
                     </div>
+                    <BackTop>
+                        <div className="toTopBtn">
+                                <i class="fa fa-arrow-up"></i>
+                        </div>
+                    </BackTop>
                 </div>
             </div>
         )

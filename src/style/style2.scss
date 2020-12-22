@@ -623,7 +623,6 @@ pre code {
   margin-right: 5;
   margin-left: 0;
 }
-
 .no-gutters>.col,
 .no-gutters>[class*="col-"] {
   padding-right: 0;
@@ -2260,6 +2259,8 @@ pre code {
 }
 
 .form-control {
+  width: 50%;
+	margin: auto;
   display: block;
   width: 100%;
   height: calc(2.25rem + 2px);
@@ -9130,10 +9131,10 @@ button.bg-dark:focus {
   margin-right: 3rem !important;
 }
 
-.mb-5,
-.my-5 {
-  margin-bottom: 3rem !important;
-}
+// .mb-5,
+// .my-5 {
+//   margin-bottom: 3rem !important;
+// }
 
 .ml-5,
 .mx-5 {
@@ -12853,6 +12854,8 @@ h5,
 }
 
 .form-control {
+  width: 50%;
+	margin: auto;
   height: 52px !important;
   background: #fff !important;
   color: #000000 !important;
@@ -12923,7 +12926,6 @@ textarea.form-control {
 
 @media (max-width: 767.98px) {
   .ftco-section {
-    padding: 6em 0;
   }
 }
 
@@ -12941,7 +12943,6 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  padding: 7em 0;
   background: rgba(0, 0, 0, 0.02);
 }
 

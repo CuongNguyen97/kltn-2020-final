@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./component/Header";
 import Body from "./component/Body";
-import Login from "./component/Login";
+//import Login from "./component/Login";
 import Rooms from "./component/Rooms/Rooms";
 
 import "./App.css";
@@ -15,18 +15,18 @@ import Footer from "./component/Footer";
 import Favorite from "./component/Favorite/Favorite";
 import User from "./component/User/User";
 function App() {
-	useEffect(() => {
-    if (!localStorage.getItem("token") && window.location.pathname !== "/login") {
-      window.location.href = "/login";
-    }
-  }, []);
+// 	useEffect(() => {
+//     if (!localStorage.getItem("token") && window.location.pathname !== "/login") {
+//       window.location.href = "/login";
+//     }
+//   }, []);
 
 	return (
 		<div>
 			<div className="wrap">
 				<div className="container">
 					<div className="row justify-content-between">
-						<div className="col d-flex align-items-center">
+						<div className="col d-flex align-items-center col-first">
 							<p className="mb-0 phone">
 								<span className="mailus">Phone no:</span>{" "}
 								<a href="#">+0792691511</a> or{" "}
@@ -34,7 +34,7 @@ function App() {
 								<a href="#">nvcuong1502@gmail.com</a>
 							</p>
 						</div>
-						<div className="col d-flex justify-content-end">
+						<div className="col d-flex justify-content-end col-second">
 							<div className="social-media">
 								<p className="mb-0 d-flex">
 									<a
@@ -80,13 +80,13 @@ function App() {
 				<div>
 					<Switch>
 						<Route exact path={["/home", "/"]}>
-							<div style={{ height: 1860 + "px" }}>
+							<div>
 								<Body />
 							</div>
 						</Route>
-						<Route path="/login">
+						{/* <Route path="/login">
 							<Login />
-						</Route>
+						</Route> */}
 						<Route path="/blog">
 							<Blog />
 						</Route>

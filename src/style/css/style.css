@@ -623,7 +623,6 @@ pre code {
   margin-right: 0;
   margin-left: 0;
 }
-
 .no-gutters>.col,
 .no-gutters>[class*="col-"] {
   padding-right: 0;
@@ -3865,7 +3864,7 @@ input[type="button"].btn-block {
 
 .dropdown-item:hover,
 .dropdown-item:focus {
-  color: #16181b;
+  color: #fd7792;
   text-decoration: none;
   background-color: #f8f9fa;
 }
@@ -9130,10 +9129,10 @@ button.bg-dark:focus {
   margin-right: 3rem !important;
 }
 
-.mb-5,
+/* .mb-5,
 .my-5 {
   margin-bottom: 3rem !important;
-}
+} */
 
 .ml-5,
 .mx-5 {
@@ -12925,7 +12924,6 @@ textarea.form-control {
 
 @media (max-width: 767.98px) {
   .ftco-section {
-    padding: 6em 0;
   }
 }
 
@@ -12943,7 +12941,6 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  padding: 7em 0;
   background: rgba(0, 0, 0, 0.02);
 }
 
